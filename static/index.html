@@ -68,8 +68,8 @@
       //moveTo(x,y);
       fillStyle = entity["colour"];
       strokeStyle = fillStyle;
-      arc(x, y, (entity["radius"])?entity["radius"]:50, 0, 2.0 * Math.PI, false);
-      stroke();
+      arc(x, y, (entity["radius"])?entity["radius"]:20, 0, 2.0 * Math.PI, false);
+      fill();
     }
   }
 
@@ -78,7 +78,7 @@
       entity["colour"] = "#FF0000";
     }
     if (!entity["radius"]) {
-      entity["radius"] = 50;
+      entity["radius"] = 10;
     }
     return entity;
   }
@@ -254,16 +254,16 @@
   // Add the application specific mouse listeners!
   //XXX: TODO Make these prettier!
   mouse.mousedowners.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'blue'});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#58ACFA'});
   });
 
   mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'red'});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#FA58AC'});
   });
 
   mouse.mousedraggers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'green',
-    'radius':10});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#81F781',
+    'radius':5});
   });
 
   function updateWorldWith(w) {
